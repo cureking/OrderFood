@@ -1,2 +1,4 @@
 # OrderFood
-an Order Food System on Wechat with SpringCloud
+
+## config-repo
+this is for springCloud config
