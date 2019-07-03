@@ -15,6 +15,6 @@ eureka:
   instance:
     prefer-ip-address: true
 env:
-  beta2
+  beta3
 label:
   master
