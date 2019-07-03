@@ -19,5 +19,5 @@ env:
 label:
   master
 girl:
-  name:pretty_girl
-  age:16
+  name: pretty_girl
+  age: 16
