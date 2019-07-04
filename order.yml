@@ -8,11 +8,19 @@ spring:
     url: jdbc:mysql://39.100.132.214:3306/SpringCloud_Shell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
-#   rabbitmq:
-#     host: localhost
-#     port: 5672
-#     username: guest
-#     password: guest
+  cloud:
+    stream:
+     bindings:
+       myMessage:
+         # 有了这个配置，集群时就不会出现Queue myMessage.anonymous.XXXXXXX这样多个实例（从而导致一条消息，所有集群示例都消费一次）。这样就可以整个集群就一个实例消费一次消息
+         group: order
+         # 有了这个配置，消息的收发端就会对数据进行序列化与反序列化操作（这样也便于在MQ后台查看数据，就不是BASE64编码的了）
+         content-type: application/json
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
