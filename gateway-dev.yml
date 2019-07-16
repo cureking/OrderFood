@@ -8,6 +8,8 @@ hystrix:
           thread:
             timeoutInMilliseconds: 20000  # 响应的超时时间，默认是1s，即1000ms。这里的设置很奇怪，20000的设置，其实是5s限制。
 zuul:
+# 全局忽略敏感头信息
+  sensitiveHeaders:
   routes:
     myProduct:   # 该处的myProduct如何命名都实际都没有影响（但是为了可读性，还是写规范一些）
       path: /myProduct/**
